@@ -1,9 +1,12 @@
 import polars as pl
-from data_loader import load_lazy, load_columns
-from config import CIC_TRAIN_PATH, CIC_TEST_PATH
+from src.data_loader import load_lazy, load_columns
+from src.config import CIC_TRAIN_PATH, CIC_TEST_PATH
 
 train_df = load_lazy(CIC_TRAIN_PATH)
 test_df = load_lazy(CIC_TEST_PATH)
+
+print(train_df)
+print(train_df.head().collect())
 
 # Label attack class disitribution
 train_dist = (train_df.group_by("attack_class").len().sort("len", descending=True).collect())

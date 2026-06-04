@@ -1,5 +1,4 @@
 import polars as pl
-from config import RAW_DIR
 
 def load_lazy(path):
     """ Load all the dataset from a parquet file """
