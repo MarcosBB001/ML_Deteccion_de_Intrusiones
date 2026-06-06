@@ -1,0 +1,530 @@
+{
+  "LogisticRegression": {
+    "accuracy": {
+      "mean": 0.6122,
+      "std": 0.0019
+    },
+    "precision": {
+      "mean": 0.6402,
+      "std": 0.0021
+    },
+    "recall": {
+      "mean": 0.6012,
+      "std": 0.002
+    },
+    "f1_macro": {
+      "mean": 0.6043,
+      "std": 0.0021
+    },
+    "per_class": {
+      "Benign": {
+        "precision": {
+          "mean": 0.4786,
+          "std": 0.0058
+        },
+        "recall": {
+          "mean": 0.6135,
+          "std": 0.0065
+        },
+        "f1": {
+          "mean": 0.5377,
+          "std": 0.0052
+        }
+      },
+      "BruteForce": {
+        "precision": {
+          "mean": 0.7742,
+          "std": 0.0123
+        },
+        "recall": {
+          "mean": 0.3235,
+          "std": 0.0076
+        },
+        "f1": {
+          "mean": 0.4563,
+          "std": 0.0078
+        }
+      },
+      "DDoS": {
+        "precision": {
+          "mean": 0.781,
+          "std": 0.0069
+        },
+        "recall": {
+          "mean": 0.5797,
+          "std": 0.0069
+        },
+        "f1": {
+          "mean": 0.6654,
+          "std": 0.0052
+        }
+      },
+      "DoS": {
+        "precision": {
+          "mean": 0.6651,
+          "std": 0.0033
+        },
+        "recall": {
+          "mean": 0.8375,
+          "std": 0.0069
+        },
+        "f1": {
+          "mean": 0.7414,
+          "std": 0.0037
+        }
+      },
+      "Mirai": {
+        "precision": {
+          "mean": 0.996,
+          "std": 0.0017
+        },
+        "recall": {
+          "mean": 0.9931,
+          "std": 0.0014
+        },
+        "f1": {
+          "mean": 0.9945,
+          "std": 0.0011
+        }
+      },
+      "Recon": {
+        "precision": {
+          "mean": 0.5512,
+          "std": 0.0056
+        },
+        "recall": {
+          "mean": 0.4854,
+          "std": 0.0083
+        },
+        "f1": {
+          "mean": 0.5162,
+          "std": 0.0059
+        }
+      },
+      "Spoofing": {
+        "precision": {
+          "mean": 0.4805,
+          "std": 0.0081
+        },
+        "recall": {
+          "mean": 0.5111,
+          "std": 0.0087
+        },
+        "f1": {
+          "mean": 0.4953,
+          "std": 0.0072
+        }
+      },
+      "Web-based": {
+        "precision": {
+          "mean": 0.3947,
+          "std": 0.0044
+        },
+        "recall": {
+          "mean": 0.4657,
+          "std": 0.0053
+        },
+        "f1": {
+          "mean": 0.4273,
+          "std": 0.0043
+        }
+      }
+    }
+  },
+  "RandomForest": {
+    "accuracy": {
+      "mean": 0.7112,
+      "std": 0.0025
+    },
+    "precision": {
+      "mean": 0.7146,
+      "std": 0.0023
+    },
+    "recall": {
+      "mean": 0.7043,
+      "std": 0.0025
+    },
+    "f1_macro": {
+      "mean": 0.7068,
+      "std": 0.0024
+    },
+    "per_class": {
+      "Benign": {
+        "precision": {
+          "mean": 0.6184,
+          "std": 0.008
+        },
+        "recall": {
+          "mean": 0.7293,
+          "std": 0.0066
+        },
+        "f1": {
+          "mean": 0.6693,
+          "std": 0.0062
+        }
+      },
+      "BruteForce": {
+        "precision": {
+          "mean": 0.6834,
+          "std": 0.0062
+        },
+        "recall": {
+          "mean": 0.5296,
+          "std": 0.0084
+        },
+        "f1": {
+          "mean": 0.5967,
+          "std": 0.0065
+        }
+      },
+      "DDoS": {
+        "precision": {
+          "mean": 0.7504,
+          "std": 0.0058
+        },
+        "recall": {
+          "mean": 0.6784,
+          "std": 0.0062
+        },
+        "f1": {
+          "mean": 0.7125,
+          "std": 0.0035
+        }
+      },
+      "DoS": {
+        "precision": {
+          "mean": 0.7066,
+          "std": 0.0034
+        },
+        "recall": {
+          "mean": 0.7735,
+          "std": 0.0081
+        },
+        "f1": {
+          "mean": 0.7386,
+          "std": 0.004
+        }
+      },
+      "Mirai": {
+        "precision": {
+          "mean": 0.9977,
+          "std": 0.0008
+        },
+        "recall": {
+          "mean": 0.998,
+          "std": 0.0006
+        },
+        "f1": {
+          "mean": 0.9978,
+          "std": 0.0005
+        }
+      },
+      "Recon": {
+        "precision": {
+          "mean": 0.6079,
+          "std": 0.0069
+        },
+        "recall": {
+          "mean": 0.614,
+          "std": 0.0086
+        },
+        "f1": {
+          "mean": 0.6109,
+          "std": 0.0059
+        }
+      },
+      "Spoofing": {
+        "precision": {
+          "mean": 0.7807,
+          "std": 0.0074
+        },
+        "recall": {
+          "mean": 0.6968,
+          "std": 0.007
+        },
+        "f1": {
+          "mean": 0.7363,
+          "std": 0.0046
+        }
+      },
+      "Web-based": {
+        "precision": {
+          "mean": 0.5716,
+          "std": 0.0049
+        },
+        "recall": {
+          "mean": 0.6145,
+          "std": 0.0078
+        },
+        "f1": {
+          "mean": 0.5923,
+          "std": 0.0054
+        }
+      }
+    }
+  },
+  "XGBoost": {
+    "accuracy": {
+      "mean": 0.7223,
+      "std": 0.0024
+    },
+    "precision": {
+      "mean": 0.7266,
+      "std": 0.0023
+    },
+    "recall": {
+      "mean": 0.7152,
+      "std": 0.0025
+    },
+    "f1_macro": {
+      "mean": 0.7175,
+      "std": 0.0024
+    },
+    "per_class": {
+      "Benign": {
+        "precision": {
+          "mean": 0.6172,
+          "std": 0.0074
+        },
+        "recall": {
+          "mean": 0.75,
+          "std": 0.0087
+        },
+        "f1": {
+          "mean": 0.6771,
+          "std": 0.0065
+        }
+      },
+      "BruteForce": {
+        "precision": {
+          "mean": 0.6999,
+          "std": 0.0104
+        },
+        "recall": {
+          "mean": 0.5343,
+          "std": 0.008
+        },
+        "f1": {
+          "mean": 0.6059,
+          "std": 0.0069
+        }
+      },
+      "DDoS": {
+        "precision": {
+          "mean": 0.7899,
+          "std": 0.0064
+        },
+        "recall": {
+          "mean": 0.6836,
+          "std": 0.0087
+        },
+        "f1": {
+          "mean": 0.7329,
+          "std": 0.0048
+        }
+      },
+      "DoS": {
+        "precision": {
+          "mean": 0.7212,
+          "std": 0.0048
+        },
+        "recall": {
+          "mean": 0.8182,
+          "std": 0.0081
+        },
+        "f1": {
+          "mean": 0.7666,
+          "std": 0.0039
+        }
+      },
+      "Mirai": {
+        "precision": {
+          "mean": 0.9984,
+          "std": 0.0006
+        },
+        "recall": {
+          "mean": 0.9979,
+          "std": 0.0005
+        },
+        "f1": {
+          "mean": 0.9981,
+          "std": 0.0004
+        }
+      },
+      "Recon": {
+        "precision": {
+          "mean": 0.6222,
+          "std": 0.0063
+        },
+        "recall": {
+          "mean": 0.6111,
+          "std": 0.0092
+        },
+        "f1": {
+          "mean": 0.6166,
+          "std": 0.0068
+        }
+      },
+      "Spoofing": {
+        "precision": {
+          "mean": 0.7869,
+          "std": 0.0068
+        },
+        "recall": {
+          "mean": 0.7152,
+          "std": 0.0064
+        },
+        "f1": {
+          "mean": 0.7493,
+          "std": 0.0042
+        }
+      },
+      "Web-based": {
+        "precision": {
+          "mean": 0.5774,
+          "std": 0.007
+        },
+        "recall": {
+          "mean": 0.611,
+          "std": 0.0079
+        },
+        "f1": {
+          "mean": 0.5937,
+          "std": 0.0063
+        }
+      }
+    }
+  },
+  "LightGBM": {
+    "accuracy": {
+      "mean": 0.7217,
+      "std": 0.002
+    },
+    "precision": {
+      "mean": 0.7273,
+      "std": 0.0019
+    },
+    "recall": {
+      "mean": 0.7143,
+      "std": 0.0021
+    },
+    "f1_macro": {
+      "mean": 0.7169,
+      "std": 0.002
+    },
+    "per_class": {
+      "Benign": {
+        "precision": {
+          "mean": 0.614,
+          "std": 0.0075
+        },
+        "recall": {
+          "mean": 0.7491,
+          "std": 0.007
+        },
+        "f1": {
+          "mean": 0.6748,
+          "std": 0.0056
+        }
+      },
+      "BruteForce": {
+        "precision": {
+          "mean": 0.7125,
+          "std": 0.0072
+        },
+        "recall": {
+          "mean": 0.527,
+          "std": 0.0077
+        },
+        "f1": {
+          "mean": 0.6059,
+          "std": 0.0064
+        }
+      },
+      "DDoS": {
+        "precision": {
+          "mean": 0.7921,
+          "std": 0.0071
+        },
+        "recall": {
+          "mean": 0.6818,
+          "std": 0.0089
+        },
+        "f1": {
+          "mean": 0.7328,
+          "std": 0.0048
+        }
+      },
+      "DoS": {
+        "precision": {
+          "mean": 0.7207,
+          "std": 0.0046
+        },
+        "recall": {
+          "mean": 0.8211,
+          "std": 0.0088
+        },
+        "f1": {
+          "mean": 0.7676,
+          "std": 0.0039
+        }
+      },
+      "Mirai": {
+        "precision": {
+          "mean": 0.9984,
+          "std": 0.0007
+        },
+        "recall": {
+          "mean": 0.9978,
+          "std": 0.0008
+        },
+        "f1": {
+          "mean": 0.9981,
+          "std": 0.0005
+        }
+      },
+      "Recon": {
+        "precision": {
+          "mean": 0.622,
+          "std": 0.0069
+        },
+        "recall": {
+          "mean": 0.614,
+          "std": 0.0092
+        },
+        "f1": {
+          "mean": 0.618,
+          "std": 0.0067
+        }
+      },
+      "Spoofing": {
+        "precision": {
+          "mean": 0.7859,
+          "std": 0.0061
+        },
+        "recall": {
+          "mean": 0.7117,
+          "std": 0.0058
+        },
+        "f1": {
+          "mean": 0.7469,
+          "std": 0.004
+        }
+      },
+      "Web-based": {
+        "precision": {
+          "mean": 0.5726,
+          "std": 0.0064
+        },
+        "recall": {
+          "mean": 0.6116,
+          "std": 0.0082
+        },
+        "f1": {
+          "mean": 0.5914,
+          "std": 0.0062
+        }
+      }
+    }
+  }
+}
