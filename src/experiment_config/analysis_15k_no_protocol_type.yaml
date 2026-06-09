@@ -1,0 +1,11 @@
+experiment:
+  test_size: 0.25
+  n_per_class: 15000
+  n_iterations: 20
+  seed: 1
+
+features:
+  to_drop: ["Tot sum", "Min", "Max", "Tot size", "Variance", "IPv", "LLC", "TCP", "UDP", "ICMP", "fin_count", "syn_count", 
+            "rst_count", "ack_count", "Label", "label", "Protocol Type"]
+  to_scale: ["Header_Length", "Time_To_Live", "Rate", "AVG", "Std", "IAT", "Number"]
+  target: "attack_class"

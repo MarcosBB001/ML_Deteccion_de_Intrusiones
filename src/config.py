@@ -10,6 +10,8 @@ PROCESSED_DIR = DATA_DIR / "processed"
 CIC_TRAIN_PATH = RAW_DIR / "cic_iot_2023_train.parquet"
 CIC_TEST_PATH = RAW_DIR / "cic_iot_2023_test.parquet"
 
+EXPERIMENTS_DIR = BASE_DIR / "src" / "experiment_config"
+
 RESULTS_DIR = BASE_DIR / "results" / "metrics"
 PLOTS_DIR = BASE_DIR / "results" / "plots"
 
