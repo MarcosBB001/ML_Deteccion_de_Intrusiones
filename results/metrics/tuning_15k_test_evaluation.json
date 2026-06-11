@@ -1,0 +1,48 @@
+{
+  "accuracy": 0.7534,
+  "precision": 0.7039,
+  "recall": 0.7231,
+  "f1_macro": 0.7052,
+  "per_class": {
+    "Benign": {
+      "precision": 0.725,
+      "recall": 0.7483,
+      "f1": 0.7364
+    },
+    "BruteForce": {
+      "precision": 0.4219,
+      "recall": 0.5559,
+      "f1": 0.4797
+    },
+    "DDoS": {
+      "precision": 0.7947,
+      "recall": 0.6811,
+      "f1": 0.7336
+    },
+    "DoS": {
+      "precision": 0.7214,
+      "recall": 0.8244,
+      "f1": 0.7695
+    },
+    "Mirai": {
+      "precision": 0.9984,
+      "recall": 0.9983,
+      "f1": 0.9983
+    },
+    "Recon": {
+      "precision": 0.7452,
+      "recall": 0.6132,
+      "f1": 0.6728
+    },
+    "Spoofing": {
+      "precision": 0.861,
+      "recall": 0.7279,
+      "f1": 0.7888
+    },
+    "Web-based": {
+      "precision": 0.3634,
+      "recall": 0.6357,
+      "f1": 0.4625
+    }
+  }
+}

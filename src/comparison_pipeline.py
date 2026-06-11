@@ -24,10 +24,10 @@ from src.data_loader import load_lazy
 from src.data_selection import sample_balanced
 from src.data_preprocessing import scale_features, encode_protocol_type
 from src.config import CIC_TRAIN_PATH, RESULTS_DIR, EXPERIMENTS_DIR
-from src.utils import load_config
+from src.utils import load_config, aggregate
 
 # How to run
-# py -m src.pipeline balanced_small.yaml
+# py -m src.comparison_pipeline compare_15k.yaml
 
 logging.getLogger("lightgbm").setLevel(logging.ERROR)
 warnings.filterwarnings("ignore", message="X does not have valid feature names")
@@ -92,36 +92,45 @@ def run_pipeline(experiment_file):
             progress.update(iter_task, completed=i + 1, description=f"Iteration {i + 1}/{N_ITERATIONS}")
             progress.reset(model_task)
 
-            x_train, x_test, y_train, y_test = train_test_split(
-                x, y_encoded, test_size=TEST_SIZE, random_state=SEED + i, stratify=y_encoded
-            )
+            # Train test split
+            x_train, x_test, y_train, y_test = train_test_split(x, y_encoded, test_size=TEST_SIZE, random_state=SEED + i, 
+                                                                stratify=y_encoded)
+            # Scale features
             x_train_scaled, x_test_scaled = scale_features(x_train, x_test, feature_cols, COLUMNS_TO_SCALE)
 
             for j, (model_name, model) in enumerate(MODELS.items()):
                 progress.update(model_task, completed=j + 1, description=f"  {model_name:<25}")
 
-                needs_scaling = model_name in ("LogisticRegression", "KNN", "LinearSVC")
-                _x_train = x_train_scaled if needs_scaling else x_train
-                _x_test = x_test_scaled if needs_scaling else x_test
+                # Preprocessing
+                if model_name in ("LogisticRegression", "KNN", "LinearSVC"):
+                    needs_scaling = True
+                else:
+                    needs_scaling = False
 
-                model.fit(_x_train, y_train)
-                y_pred = model.predict(_x_test)
+                if needs_scaling:
+                    _x_train = x_train_scaled 
+                    _x_test = x_test_scaled 
+                else:
+                    _x_train = x_train
+                    _x_test = x_test
 
+                model.fit(_x_train, y_train)  # Fit
+                y_pred = model.predict(_x_test)  # Predict
+
+                # Compute and store macro metrics
                 results[model_name]["accuracy"].append(accuracy_score(y_test, y_pred))
                 results[model_name]["precision"].append(precision_score(y_test, y_pred, average="macro", zero_division=0))
                 results[model_name]["recall"].append(recall_score(y_test, y_pred, average="macro", zero_division=0))
                 results[model_name]["f1_macro"].append(f1_score(y_test, y_pred, average="macro", zero_division=0))
 
+                # Compute and store metrics for each class
                 report = classification_report(y_test, y_pred, target_names=classes, output_dict=True, zero_division=0)
                 for c in classes:
                     results[model_name]["per_class"][c]["precision"].append(report[c]["precision"])
                     results[model_name]["per_class"][c]["recall"].append(report[c]["recall"])
                     results[model_name]["per_class"][c]["f1"].append(report[c]["f1-score"])
 
-    # ── Aggregate & save ──────────────────────────────────────────────────────
-    def aggregate(values):
-        return {"mean": round(float(np.mean(values)), 4), "std": round(float(np.std(values)), 4)}
-
+    # ── Aggregate & save results ──────────────────────────────────────────────────────
     summary = {}
     for model_name, metrics in results.items():
         summary[model_name] = {

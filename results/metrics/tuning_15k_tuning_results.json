@@ -1,0 +1,24 @@
+{
+  "random_search": {
+    "best_score": 0.7241,
+    "best_params": {
+      "subsample": 1.0,
+      "n_estimators": 300,
+      "min_child_weight": 7,
+      "max_depth": 8,
+      "learning_rate": 0.2,
+      "colsample_bytree": 0.7
+    }
+  },
+  "grid_search": {
+    "best_score": 0.7241,
+    "best_params": {
+      "colsample_bytree": 0.6,
+      "learning_rate": 0.1,
+      "max_depth": 7,
+      "min_child_weight": 5,
+      "n_estimators": 500,
+      "subsample": 1.0
+    }
+  }
+}

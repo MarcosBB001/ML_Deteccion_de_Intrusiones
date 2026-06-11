@@ -10,6 +10,7 @@ from pathlib import Path
 from sklearn.model_selection import train_test_split, learning_curve
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.model_selection import StratifiedKFold
+from sklearn.utils.class_weight import compute_sample_weight
 from xgboost import XGBClassifier
 from lightgbm import LGBMClassifier
 
@@ -18,6 +19,9 @@ from src.data_selection import sample_balanced
 from src.data_preprocessing import scale_features, encode_protocol_type
 from src.config import CIC_TRAIN_PATH, RESULTS_DIR, EXPERIMENTS_DIR, PLOTS_DIR
 from src.utils import load_config
+
+# How to run
+# py -m src.analysis_pipeline analysis_15k.yaml
 
 PLOTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -63,7 +67,8 @@ x_train, x_test, y_train, y_test = train_test_split(
 
 # ── Train ─────────────────────────────────────────────────────────────────────
 print(f"Training {MODEL_NAME}...")
-MODEL.fit(x_train, y_train)
+sample_weights = compute_sample_weight(class_weight="balanced", y=y_train)  # Assign weight value inversely proportional to n_samples
+MODEL.fit(x_train, y_train, sample_weight=sample_weights)
 y_pred = MODEL.predict(x_test)
 
 # ── Classification report ─────────────────────────────────────────────────────

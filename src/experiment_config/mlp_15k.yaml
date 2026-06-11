@@ -1,0 +1,14 @@
+# experiments/mlp_15k.yaml
+experiment:
+  test_size: 0.25
+  n_per_class: 15000
+  seed: 42
+  epochs: 100
+  batch_size: 512
+  patience: 10
+
+features:
+  to_drop: ["Tot sum", "Min", "Max", "Tot size", "Variance", "IPv", "LLC", "TCP", "UDP", "ICMP", "fin_count", "syn_count", 
+            "rst_count", "ack_count", "Label", "label", "Protocol Type", "Telnet", "SMTP", "IRC", "IGMP"]
+  to_scale: ["Header_Length", "Time_To_Live", "Rate", "AVG", "Std", "IAT", "Number"]
+  target: "attack_class"
